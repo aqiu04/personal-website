@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Footer from "@/components/footer"
+import { metaData } from "./config"
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -14,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Allen's Personal Website",
-  description: "Welcome to Allen's personal website!",
+  title: metaData.title,
+  description: metaData.description,
 };
 
 export default function RootLayout({
@@ -24,11 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="flex flex-col items-center justify-center mx-auto mt-4">
+        
+        <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[800px] w-full">
+          {children}
+          <Footer></Footer>
+        </main>
       </body>
     </html>
   );
