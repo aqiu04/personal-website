@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="flex flex-col items-center justify-center mx-auto mt-4">
+      <body className="flex flex-col items-center justify-center mx-auto mt-4 font-[family-name:var(--font-geist-sans)]">
         
-        <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[800px] w-full">
+        <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[800px] w-full ">
           {children}
           <Footer></Footer>
         </main>
